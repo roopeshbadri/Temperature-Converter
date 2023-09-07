@@ -1,138 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="vendor/fontawesome-free-6.4.0-web/css/all.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="vendor/fontawesome-free-6.4.0-web/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
     <style>
-        .input-btn{
-            height: 50px;
-            width: 80px;
-            font-size: 1em;
-        }
-         .clear-btn{
-            height: 50px;
-            width: 80px;
-            font-size: 1em;
-        }
-        .ac-btn{
+      .input-btn {
+        height: 50px;
+        width: 80px;
+        font-size: 1em;
+      }
+      .clear-btn {
+        height: 50px;
+        width: 80px;
+        font-size: 1em;
+      }
+      /* .ac-btn{
             width: 130px;
-            height:50px
+            height:50px;
         }
         .convert-btn{
             width: 140px;
-            height:50px
-        }
-        .input-box{
-            height: 30px;
-        }
-         .output-box{
-            height: 30px;
-        }
+            height:100px;
+        } */
+      .input-box {
+        height: 30px;
+      }
+      .output-box {
+        height: 30px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container p-6">
-        <div class="d-flex justify-content-center">
-            <div class="card col-sm-12 col-md-4 col-lg-4 my-5 bg-dark bg-opacity-10">
-                <div class="card-body ">
-                    <div class="card-title d-flex justify-content-center bg-info bg-gradient" style="font-family: Georgia, 'Times New Roman', Times, serif;font-size: 1.3em;color:rgb(180, 102, 102);border-radius: 7px;"> CELSIUS TO FAHRENHEIT <i class="bi bi-thermometer"></i></div>
-                    <div class="row col-sm-12 col-md-12 col-lg-12 d-flex justify-content-around mx-1">
-                        <div id="celsius-box" class="row col-sm-6 col-md-6 col-lg-6 input-box" style="color: rgb(211, 112, 36);" >CELSIUS </div>
-                        <div id="far-box" class="row col-sm-6 col-md-6 col-lg-6 output-box " style="color: rgb(10, 172, 242);" >FARHENHEIT</div>
-                    </div>
-                    <div class="row col-sm-12 col-md-12 col-lg-12 d-flex justify-content-around mx-1">
-                        <div id="celsius_box" class="row col-sm-6 col-md-6 col-lg-6 input-box d-flex justify-content-center" style="border: 1px solid rgb(211, 112, 36);width: 130px;border-radius:6px ;">0</div>
-                        <div id="far_box" class="row col-sm-6 col-md-6 col-lg-6 output-box d-flex justify-content-center" style="border: 1px solid rgb(10, 172, 242);width: 130px;border-radius: 6px;">
-                            
-                        </div>
-                    </div>
-                    
-                    <div class="row p-3 justify-content-center">
-                        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                            <button type="button" class="btn btn-light input-btn" data-event-key="1">
-                                1
-                            </button>
-                        </div>
-                        <div class="col-sm-4 col-md-4 col-lg-4">
-                            <button type="button" class="btn btn-light input-btn" data-event-key="2">
-                                2
-                            </button>
-                        </div>
-                       <div class="col-sm-4 col-md-4 col-lg-4">
-                            <button type="button" class="btn btn-light input-btn" data-event-key="3">
-                                3
-                            </button>
-                        </div>
-                    </div>
-                    <div class="row p-3 justify-content-center">
-                        <div class="col-sm-4 col-md-4 col-lg-4">
-                            <button type="button" class="btn btn-light input-btn" data-event-key="4">
-                                4
-                            </button>
-                        </div>
-                       <div class="col-sm-4 col-md-4 col-lg-4">
-                            <button type="button" class="btn btn-light input-btn" data-event-key="5">
-                                5
-                            </button>
-                        </div>
-                       <div class="col-sm-4 col-md-4 col-lg-4">
-                            <button type="button" class="btn btn-light input-btn" data-event-key="6">
-                                6
-                            </button>
-                        </div>
-                    </div>
-                    <div class="row p-3 justify-content-center">
-                        <div class="col-sm-4 col-md-4 col-lg-4">
-                            <button type="button" class="btn btn-light input-btn" data-event-key="7">
-                                7
-                            </button>
-                        </div>
-                        <div class="col-sm-4 col-md-4 col-lg-4">
-                            <button type="button" class="btn btn-light input-btn" data-event-key="8">
-                                8
-                            </button>
-                        </div>
-                        <div class="col-sm-4 col-md-4 col-lg-4">
-                            <button type="button" class="btn btn-light input-btn" data-event-key="9">
-                                9
-                            </button>
-                        </div>
-                    </div>
-                    <div class="row p-3 justify-content-center">
-                        <div class="col-sm-4 col-md-4 col-lg-4">
-                            <button type="button" class="btn btn-light input-btn" data-event-key="0">
-                                0
-                            </button>
-                        </div>
-                        <div class="col-sm-4 col-md-4 col-lg-4">
-                            <button type="button" class="btn btn-light input-btn" data-event-key=".">
-                                .
-                            </button>
-                        </div>
-                        <div class="col-sm-4 col-md-4 col-lg-4">
-                            <button type="button" class="btn btn-light clear-btn" data-event-key="CLEAR" onclick="backspace()">
-                                CLEAR
-                            </button>
-                        </div>
-                    </div>
-                     <div class="row p-3 justify-content-between">
-                        <div class="col-sm-4 col-md-4 col-lg-4">
-                            <button type="button" class="btn btn-light ac-btn" data-event-key="Delete" onclick="clearapp()">
-                                ALL CLEAR
-                            </button>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-6">
-                            <button type="button" class="btn btn-light convert-btn bg-primary" data-event-key="CONVERT" style="color: white;" onclick="converttemp()">
-                               <i class="bi bi-thermometer-sun"></i> CONVERT
-                            </button>
-                        </div>
-                 </div>
+      <div class="d-flex justify-content-center">
+        <div class="card col-sm-12 col-md-4 col-lg-4 my-5 bg-dark">
+          <div class="card-body">
+            <div
+              class="card-title d-flex justify-content-center"
+              style="
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: 1.3em;
+                color: rgb(225, 163, 69);
+                border-radius: 7px;
+              "
+            >
+              CELSIUS TO FAHRENHEIT <i class="bi bi-thermometer"></i>
             </div>
+            <div style="height: 10px"></div>
+            <div
+              class="col-sm-12 col-md-12 col-lg-12 bg-dark-subtle mt-1"
+              style="height: 125px; border-radius: 10px"
+            >
+              <div
+                class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center text-danger"
+              >
+                CELSIUS
+              </div>
+              <div
+                class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center"
+              >
+                <div
+                  class="d-flex justify-content-center border-danger"
+                  id="celsius_box"
+                  style="
+                    border: 1px solid black;
+                    width: 160px;
+                    border-radius: 8px;
+                  "
+                >
+                  0
+                </div>
+              </div>
+              <div style="height: 15px"></div>
+              <div
+                class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center text-primary"
+              >
+                FAHRENHEIT
+              </div>
+              <div
+                class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center"
+              >
+                <div
+                  class="d-flex justify-content-center border-primary"
+                  id="far_box"
+                  style="
+                    border: 1px solid black;
+                    width: 160px;
+                    border-radius: 8px;
+                    height: 25px;
+                  "
+                ></div>
+              </div>
+            </div>
+            <!-- <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center text-danger">CELSIUS</div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                       <div class="d-flex justify-content-center border-danger" id="celsius_box" style="border: 1px solid black;width: 160px;border-radius: 8px;">0</div>
+                    </div>
+                    <div style="height: 15px;"></div>
+                     <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center text-primary">FAHRENHEIT</div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                       <div class="d-flex justify-content-center border-primary" id="far_box" style="border: 1px solid black;width: 160px;border-radius: 8px;height: 25px;"></div>
+                    </div> -->
+            <!-- <div class="col-sm-6 col-md-6 col-lg-12 d-flex justify-content-center mx-4">
+                        <div id="celsius-box" class="col-sm-6 col-md-6 col-lg-6 input-box" style="color: rgb(211, 112, 36);" >CELSIUS</div>
+                        <div id="far-box" class="col-sm-6 col-md-6 col-lg-6 output-box" style="color: rgb(10, 172, 242);">FAHRENHEIT</div>
+                    </div> -->
+            <!-- <div class="row col-sm-12 col-md-12 col-lg-12 d-flex justify-content-around">
+                        <div id="celsius_box" class="col-sm-6 col-md-6 col-lg-6 input-box d-flex justify-content-center" style="border: 1px solid rgb(211, 112, 36);width: 130px;border-radius:6px ;">0</div>
+                        <div id="far_box" class="col-sm-6 col-md-6 col-lg-6 output-box d-flex justify-content-center mx-5" style="border: 1px solid rgb(10, 172, 242);width: 130px;border-radius: 6px;"></div>
+                        <!-- <input type="number" name="celsius-box" id="celsius_box" > -->
+          </div>
+          <!-- <div class="row p-3 justify-content-center mx-4 mt-2">
+                            <div id="celsius_box" class="col-sm-6 col-md-6 col-lg-6 input-box d-flex justify-content-center" style="border: 1px solid rgb(211, 112, 36);width: 130px;border-radius:6px ;">0</div>
+                            <div id="far_box" class="col-sm-6 col-md-6 col-lg-6 output-box d-flex justify-content-center mx-5" style="border: 1px solid rgb(10, 172, 242);width: 130px;border-radius: 6px;"></div>
+                        </div> -->
+
+          <div class="row p-3 justify-content-center mx-4">
+            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              <button
+                type="button"
+                class="btn btn-light input-btn"
+                data-event-key="1"
+              >
+                1
+              </button>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <button
+                type="button"
+                class="btn btn-light input-btn"
+                data-event-key="2"
+              >
+                2
+              </button>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <button
+                type="button"
+                class="btn btn-light input-btn"
+                data-event-key="3"
+              >
+                3
+              </button>
+            </div>
+          </div>
+          <div class="row p-3 justify-content-center mx-4">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <button
+                type="button"
+                class="btn btn-light input-btn"
+                data-event-key="4"
+              >
+                4
+              </button>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <button
+                type="button"
+                class="btn btn-light input-btn"
+                data-event-key="5"
+              >
+                5
+              </button>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <button
+                type="button"
+                class="btn btn-light input-btn"
+                data-event-key="6"
+              >
+                6
+              </button>
+            </div>
+          </div>
+          <div class="row p-3 justify-content-center mx-4">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <button
+                type="button"
+                class="btn btn-light input-btn"
+                data-event-key="7"
+              >
+                7
+              </button>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <button
+                type="button"
+                class="btn btn-light input-btn"
+                data-event-key="8"
+              >
+                8
+              </button>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <button
+                type="button"
+                class="btn btn-light input-btn"
+                data-event-key="9"
+              >
+                9
+              </button>
+            </div>
+          </div>
+          <div class="row p-3 justify-content-center mx-4">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <button
+                type="button"
+                class="btn btn-light input-btn"
+                data-event-key="0"
+              >
+                0
+              </button>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <button
+                type="button"
+                class="btn btn-light input-btn"
+                data-event-key="."
+              >
+                .
+              </button>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <button
+                type="button"
+                class="btn btn-light clear-btn"
+                data-event-key="CLEAR"
+                onclick="backspace()"
+              >
+                CLEAR
+              </button>
+            </div>
+          </div>
+          <div class="row p-3 justify-content-center mx-5">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+              <button
+                type="button"
+                class="btn btn-light ac-btn"
+                data-event-key="Delete"
+                onclick="clearapp()"
+                style="
+                  height: 45px;
+                  left: 10px;
+                  position: relative;
+                  width: 115px;
+                "
+              >
+                ALL CLEAR
+              </button>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                data-event-key="CONVERT"
+                onclick="converttemp()"
+                style="height: 45px"
+              >
+                <i class="bi bi-thermometer-sun"></i>CONVERT
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script
@@ -142,93 +287,89 @@
     ></script>
     <script src="vendor/bootstrap/js/bootstrap.js"></script>
     <script>
-        var outputnumber="";
-        $(document).on("keypress",function(e)
-        {
-            console.log("keycode: " + e.keyCode)
-            //console.log($("button[data-event-key=2]"))
-            $('button[data-event-key="'+ e.key +'"]').addClass("active");
-            if((e.keyCode>=48 && e.keyCode<=57) || (e.keyCode>=96 && e.keyCode<=105) ){
-                console.log("number pressed")
-                appendnumber(e.key);
-            }
-            else if(e.keyCode==13){
-                console.log("enter pressed")
-                converttemp();
-            }
-            else if(e.keyCode==8){
-                 console.log("backspace pressed")
-                 backspace();
-             }
-            else{
-            //    alert("!enter a number");
-            }
-        });
-        $(document).on("keyup", function (e) {
+      var outputnumber = "";
+      $(document).on("keypress", function (e) {
+        console.log("keycode: " + e.keyCode);
+        //console.log($("button[data-event-key=2]"))
+        $('button[data-event-key="' + e.key + '"]').addClass("active");
+        if (
+          (e.keyCode >= 48 && e.keyCode <= 57) ||
+          (e.keyCode >= 96 && e.keyCode <= 105)
+        ) {
+          console.log("number pressed");
+          appendnumber(e.key);
+        } else if (e.keyCode == 13) {
+          console.log("enter pressed");
+          converttemp();
+        } else if (e.keyCode == 8) {
+          console.log("backspace pressed");
+          backspace();
+        } else {
+          //    alert("!enter a number");
+        }
+      });
+      $(document).on("keyup", function (e) {
         $('button[data-event_key="' + e.key + '"]').removeClass("active");
         // appendnumber(e.key)
         //console.log(e.keyCode);
-        });
-        $(".input-btn").on("click", function (e) {
+      });
+      $(".input-btn").on("click", function (e) {
         var key = $(this).data("event-key");
         console.log($(this).data);
         console.log(key);
-        if (
-          key != "Delete"
-        ) {
+        if (key != "Delete") {
           appendnumber(key);
-        }})
-        
-        function appendnumber(key){
-            var existingnumber= $("#celsius_box").html();
-            var currentnumber=key;
-            // var outputnumber="";
-            if (
-                existingnumber != "" &&
-                existingnumber != undefined &&
-                existingnumber != null
-            ){
-                // console.log(existingnumber.length)
-                // console.log(existingnumber=="0")
-                if(existingnumber == 0 ){
-                    outputnumber=key;
-                }
-                else{
-                    outputnumber= existingnumber+=currentnumber;
-                    
-                }
-            }else{
-                    outputnumber=currentnumber;
-                }
-                $("#celsius_box").html(outputnumber);
-        }   
+        }
+      });
 
-        function converttemp(){
+      function appendnumber(key) {
+        var existingnumber = $("#celsius_box").html();
+        var currentnumber = key;
+        // var outputnumber="";
+        if (
+          existingnumber != "" &&
+          existingnumber != undefined &&
+          existingnumber != null
+        ) {
+          // console.log(existingnumber.length)
+          // console.log(existingnumber=="0")
+          if (existingnumber == 0) {
+            outputnumber = key;
+          } else {
+            outputnumber = existingnumber += currentnumber;
+          }
+        } else {
+          outputnumber = currentnumber;
+        }
+        $("#celsius_box").html(outputnumber);
+      }
+
+      function converttemp() {
         // $(".convert-btn").on("click",function(){
-                outputnumber=outputnumber*(9/5)+32;
-                // console.log(outputnumber)
-                $("#far_box").html(outputnumber);
+        outputnumber = outputnumber * (9 / 5) + 32;
+        // console.log(outputnumber)
+        $("#far_box").html(outputnumber);
         // })
-        }
-        function clearapp(){
-            // $(".ac-btn").on("click",function(){
-                $("#celsius_box").html("0");
-                $("#far_box").html("");
-            // })
-        }
-       function backspace(){
+      }
+      function clearapp() {
+        // $(".ac-btn").on("click",function(){
+        $("#celsius_box").html("0");
+        $("#far_box").html("");
+        // })
+      }
+      function backspace() {
         // console.log("hi from backspace")
         // $(".clear-btn").on("click",function(){
-            var num=$("#celsius_box").html()
-            // console.log("clear button")
-            console.log(num)
-            var num1=num.slice(0,num.length-1)
-            $("#celsius_box").html(num1)
-            //converttemp();
-            }
-    //     }
-    //         // console.log(outputnumber)
-    //  )
+        var num = $("#celsius_box").html();
+        // console.log("clear button")
+        console.log(num);
+        var num1 = num.slice(0, num.length - 1);
+        $("#celsius_box").html(num1);
+        //converttemp();
+      }
+      //     }
+      //         // console.log(outputnumber)
+      //  )
     </script>
-</body>
+  </body>
 </html>
